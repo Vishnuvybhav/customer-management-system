@@ -1,0 +1,23 @@
+{% extends 'accounts/main.html'%}
+{%block content%}
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>UPDATE ORDER:</h5>
+            <form action="" method="POST">
+                 {%csrf_token%}
+                 <tr>
+                   <hr>
+                   <td>{{form.customer}}</td>
+                   <td>{{form.product}}</td>
+                   <td>{{form.status}}</td>
+                   <hr>
+                <input type="submit" value="Submit">
+            </form>
+                    
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

@@ -1,0 +1,41 @@
+{% extends 'accounts/main.html'%}
+{%block content%}
+{% load crispy_forms_tags %}
+
+<br>
+<div class="width-50 p-3  border border-dark m-4" >
+    <form action="" method="POST">
+        {%csrf_token%}
+        {{ form | crispy }}
+    <input type="submit" value="submit"  class="btn btn-primary">
+    </form>
+</div>
+
+<div class="row">
+        <div class="col-md">
+
+            <div class="card card-body">
+                 <h5>Products</h5>
+                </div>
+                <div class="card card-body">
+                    <table class="table">
+                        <tr>
+                            <th>Product</th>
+                            <th>Catogory</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            {%for t in data%}
+                            <tr>
+                               <td>{{t.name}}</td>
+                               <td>{{t.category}}</td>
+                               <td>{{t.price}}</td>
+                            </tr>
+                        </tr>
+                        {%endfor%}
+                    </table>
+                </div>
+            </div>
+        </div>
+{%endblock%}
+   
